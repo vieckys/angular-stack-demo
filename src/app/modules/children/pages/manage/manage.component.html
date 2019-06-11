@@ -1,0 +1,87 @@
+<div class="columns">
+    <div class="column is-4 is-offset-4">
+      <div class="box">
+        <h1 class="title">Add Child Form</h1>
+        <form (submit)="onSubmit()" [formGroup]="manageForm">
+          <div class="field">
+            <label class="label">Name</label>
+            <p class="control has-icons-left has-icons-right">
+              <input class="input" type="text" placeholder="Name" formControlName="name"/>
+              <span class="icon is-small is-left">
+                <i class="fas fa-envelope"></i>
+              </span>
+              <span class="icon is-small is-right">
+                <i class="fas fa-check"></i>
+              </span>
+            </p>
+          </div>
+
+          <div class="field">
+            <label class="label">DOB</label>
+            <p class="control has-icons-left has-icons-right">
+              <input class="input" type="date" placeholder="DOB" formControlName="dob"/>
+              <span class="icon is-small is-left">
+                <i class="fas fa-envelope"></i>
+              </span>
+              <span class="icon is-small is-right">
+                <i class="fas fa-check"></i>
+              </span>
+            </p>
+          </div>
+
+          <div class="field">
+            <label class="label">Gender</label>
+            <div class="control">
+              <label class="radio">
+                <input type="radio" name="gender" value="male" formControlName="gender" checked>
+                Male
+              </label>
+              <label class="radio">
+                <input type="radio" name="gender" value="female" formControlName="gender">
+                Female
+              </label>
+            </div>
+          </div>
+
+          <div class="field">
+            <label class="label">Height</label>
+            <p class="control has-icons-left has-icons-right">
+              <input class="input" type="text" placeholder="Height in cm" formControlName="height"/>
+              <span class="icon is-small is-left">
+                <i class="fas fa-envelope"></i>
+              </span>
+              <span class="icon is-small is-right">
+                <i class="fas fa-check"></i>
+              </span>
+            </p>
+          </div>
+
+          <div class="field">
+            <label class="label">Weight</label>
+            <p class="control has-icons-left has-icons-right">
+              <input class="input" type="text" placeholder="Weight in kg" formControlName="weight"/>
+              <span class="icon is-small is-left">
+                <i class="fas fa-envelope"></i>
+              </span>
+              <span class="icon is-small is-right">
+                <i class="fas fa-check"></i>
+              </span>
+            </p>
+          </div>
+
+          <div class="field">
+            <label class="label">Special Information</label>
+            <p class="control has-icons-right">
+              <textarea class="textarea is-primary" formControlName="specialCare" placeholder="Any special care"></textarea>
+              <span class="icon is-small is-right">
+                <i class="fas fa-check"></i>
+              </span>
+          </div>
+
+          <div class="control">
+            <button class="button is-link is-medium is-fullwidth" [disabled]="!manageForm.valid">Add Child</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
