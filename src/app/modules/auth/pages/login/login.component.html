@@ -10,7 +10,7 @@
             <span class="icon is-small is-left">
               <i class="fas fa-envelope"></i>
             </span>
-            <span class="icon is-small is-right">
+            <span class="icon is-small is-right" *ngIf="loginForm.controls['email'].valid">
               <i class="fas fa-check"></i>
             </span>
           </p>
@@ -18,10 +18,13 @@
 
         <div class="field">
           <label class="label">Password</label>
-          <p class="control has-icons-left">
+          <p class="control has-icons-left has-icons-right">
             <input class="input" type="password" placeholder="Password" formControlName="password"/>
             <span class="icon is-small is-left">
               <i class="fas fa-lock"></i>
+            </span>
+            <span class="icon is-small is-right" *ngIf="loginForm.controls['password'].valid">
+              <i class="fas fa-check"></i>
             </span>
           </p>
         </div>
