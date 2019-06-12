@@ -11,12 +11,12 @@ const routes: Routes = [
     loadChildren: './modules/auth/auth.module#AuthModule'
   },
   {
-    path: 'children',
-    loadChildren: './modules/children/children.module#ChildrenModule'
-  },
-  {
     path: 'dashboard',
     loadChildren: './modules/dashboard/dashboard.module#DashboardModule'
+  },
+  {
+    path: 'child',
+    loadChildren: './modules/child/child.module#ChildModule'
   }
 ];
 

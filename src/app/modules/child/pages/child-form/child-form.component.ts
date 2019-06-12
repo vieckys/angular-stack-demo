@@ -2,13 +2,12 @@ import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
 
 @Component({
-  selector: 'app-manage',
-  templateUrl: './manage.component.html',
-  styleUrls: ['./manage.component.scss']
+  selector: 'app-child-form',
+  templateUrl: './child-form.component.html',
+  styleUrls: ['./child-form.component.scss']
 })
-export class ManageComponent implements OnInit {
-  manageForm: FormGroup;
-
+export class ChildFormComponent implements OnInit {
+  childForm: FormGroup;
   constructor() { }
 
   ngOnInit() {
@@ -23,7 +22,7 @@ export class ManageComponent implements OnInit {
     let weight: string = null;
     let specialCare: string = null;
 
-    this.manageForm = new FormGroup({
+    this.childForm = new FormGroup({
       name: new FormControl(name, Validators.required),
       dob: new FormControl(dob, Validators.required),
       gender: new FormControl(gender, Validators.required),
@@ -34,7 +33,7 @@ export class ManageComponent implements OnInit {
   }
 
   onSubmit() {
-    console.log(this.manageForm.value);
+    console.log(this.childForm.value);
   }
 
 }

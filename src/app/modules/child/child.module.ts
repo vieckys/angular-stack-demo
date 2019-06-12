@@ -2,16 +2,16 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule, ReactiveFormsModule }   from '@angular/forms';
 
-import { ChildrenRoutingModule } from './children-routing.module';
-import { ManageComponent } from './pages/manage/manage.component';
+import { ChildRoutingModule } from './child-routing.module';
+import { ChildFormComponent } from './pages/child-form/child-form.component';
 
 @NgModule({
-  declarations: [ManageComponent],
+  declarations: [ ChildFormComponent],
   imports: [
     CommonModule,
-    ChildrenRoutingModule,
+    ChildRoutingModule,
     FormsModule,
     ReactiveFormsModule
   ]
 })
-export class ChildrenModule { }
+export class ChildModule { }
