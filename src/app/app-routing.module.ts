@@ -17,6 +17,10 @@ const routes: Routes = [
   {
     path: 'child',
     loadChildren: './modules/child/child.module#ChildModule'
+  },
+  {
+    path: 'vaccine',
+    loadChildren: './modules/vaccine/vaccine.module#VaccineModule'
   }
 ];
 

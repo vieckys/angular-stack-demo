@@ -1,0 +1,10 @@
+<div>
+  <ul>
+    <li *ngFor="let vaccine of vaccines">
+      <span>{{vaccine.name}}</span>
+      <span>{{vaccine.date}}</span>
+    </li>
+  </ul>
+
+  <a routerLink="/vaccine/add">Add Vaccine</a>
+</div>
