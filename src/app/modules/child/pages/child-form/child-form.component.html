@@ -3,6 +3,7 @@
       <div class="box">
         <h1 class="title">Add Child Form</h1>
         <form (submit)="onSubmit()" [formGroup]="childForm">
+          <input type="hidden" formControlName="parent_id">
           <div class="field">
             <label class="label">Name</label>
             <p class="control has-icons-left has-icons-right">
@@ -72,7 +73,7 @@
           <div class="field">
             <label class="label">Special Information</label>
             <p class="control has-icons-right">
-              <textarea class="textarea is-primary" formControlName="specialCare" placeholder="Any special care"></textarea>
+              <textarea class="textarea is-primary" formControlName="remarks" placeholder="Any special care"></textarea>
               <span class="icon is-small is-right">
                 <i class="fas fa-check"></i>
               </span>

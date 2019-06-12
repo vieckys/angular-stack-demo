@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
+import { ChildService } from '../../service/child.service';
+import { AuthService } from 'src/app/modules/auth/service/auth.service';
 
 @Component({
   selector: 'app-child-form',
@@ -8,7 +10,7 @@ import { FormGroup, FormControl, Validators } from '@angular/forms';
 })
 export class ChildFormComponent implements OnInit {
   childForm: FormGroup;
-  constructor() { }
+  constructor(private childService: ChildService, private authService: AuthService) { }
 
   ngOnInit() {
     this.initForm();
@@ -20,7 +22,8 @@ export class ChildFormComponent implements OnInit {
     let gender: string = null;
     let height: string = null;
     let weight: string = null;
-    let specialCare: string = null;
+    let remarks: string = null;
+    let parentId: string = this.authService.getUser().id;
 
     this.childForm = new FormGroup({
       name: new FormControl(name, Validators.required),
@@ -28,11 +31,13 @@ export class ChildFormComponent implements OnInit {
       gender: new FormControl(gender, Validators.required),
       height: new FormControl(height, Validators.required),
       weight: new FormControl(weight, Validators.required),
-      specialCare: new FormControl(specialCare),
+      remarks: new FormControl(remarks),
+      parent_id: new FormControl(parentId),
     });
   }
 
   onSubmit() {
+    this.childService.create(this.childForm.value);
     console.log(this.childForm.value);
   }
 
