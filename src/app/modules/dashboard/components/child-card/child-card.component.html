@@ -1,21 +1,50 @@
-<div class="card child-card">
-  <header class="card-header">
-    <p class="card-header-title">
-      {{child.name}}
-    </p>
-  </header>
-  <div class="card-content">
-    <div class="content">
-      <p><b>Age: </b>{{child.age}}</p>
-      <p><b>Gender: </b>{{child.gender}}</p>
+<div class="columns">
+  <div class="column is-3">
+    <div class="card">
+      <div class="card-image">
+        <figure class="image is-4by3">
+          <img src="assets/images/boy.jpg" alt="Placeholder image">
+        </figure>
+      </div>
+      <div class="card-content">
+        <div class="media">
+          <div class="media-content">
+            <p class="title is-4">My Boy</p>
+          </div>
+        </div>
 
-      <span><b>Next Vaccine:</b></span>
-      <span> Polio | 15 Days</span>
+        <div class="content">
+          Age : 1yr <br>
+          DOB : <time datetime="2016-1-1">1 Jan 2016</time><br>
+          Next vaccine : Polio <br>
+          Countdown :
+
+        </div>
+      </div>
     </div>
   </div>
-  <footer class="card-footer">
-    <a routerLink="/child/{{child.childId}}/edit" class="card-footer-item">Edit</a>
-    <a routerLink="/vaccine" class="card-footer-item">Manage Vaccine</a>
-  </footer>
+  <div class="column is-3">
+    <div class="card child-card">
+      <header class="card-header">
+        <p class="card-header-title">
+          {{child.name}}
+        </p>
+      </header>
+      <div class="card-content">
+        <div class="content">
+          <p><b>Age: </b>{{child.age}}</p>
+          <p><b>Gender: </b>{{child.gender}}</p>
+
+          <span><b>Next Vaccine:</b></span>
+          <span> Polio | 15 Days</span>
+        </div>
+      </div>
+      <footer class="card-footer">
+        <a routerLink="/child/{{child.childId}}/edit" class="card-footer-item">Edit</a>
+        <a routerLink="/vaccine" class="card-footer-item">Manage Vaccine</a>
+      </footer>
+    </div>
+  </div>
 </div>
+
 

@@ -29,7 +29,7 @@ export class AuthService {
         if (res.status == 1) {
           this.setSession(res);
           this.router.navigate(['/dashboard']);
-          console.log(res);
+          console.log('Login response', res);
         }
         else {
           alert('Wrong credentials!!!');
