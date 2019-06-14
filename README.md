@@ -1,4 +1,4 @@
-# VaccTrack (https://flic.kr/p/2gdX1if)
+# VaccTrack ![logo](https://live.staticflickr.com/65535/48060574176_d3ffca3e4f_m.jpg "logo")
 
 This project has been built for reminding about vaccines which have to be given to Kids. It includes the vaccines approved by government.
 As soon as user creates account for his/her child, project generates reminders for each vaccine.
