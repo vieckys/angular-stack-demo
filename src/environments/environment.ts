@@ -4,7 +4,8 @@
 
 export const environment = {
   production: false,
-  API_ENDPOINT: 'http://127.0.0.1:8000/api/'
+  API_ENDPOINT: 'https://462pjerakl.execute-api.us-east-1.amazonaws.com/latest/v1/'
+  // API_ENDPOINT: 'http://127.0.0.1:8000/api/'
 };
 
 /*

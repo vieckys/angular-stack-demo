@@ -23,6 +23,17 @@ export class ChildService {
     );
   }
 
+  edit(id) {
+    return this.http.get(`${this.url}edit/${id}`).subscribe(
+      res => {
+        return res;
+      },
+      err => {
+        console.log("Error occured");
+      }
+    );
+  }
+
   create(postData) {
     return this.http.post(`${this.url}create`, postData).subscribe(
       res => {

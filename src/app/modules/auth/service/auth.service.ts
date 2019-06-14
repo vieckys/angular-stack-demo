@@ -8,10 +8,11 @@ import { Router } from '@angular/router';
 })
 export class AuthService {
 
+  url: string = `${environment.API_ENDPOINT}user/`;
   constructor(private http: HttpClient, private router: Router) { }
 
   register(postData) {
-    return this.http.post(`${environment.API_ENDPOINT}users/create`, postData).subscribe(
+    return this.http.post(`${this.url}signup`, postData).subscribe(
       res => {
         console.log(res);
       },
@@ -22,8 +23,9 @@ export class AuthService {
   }
 
   login(postData) {
-    return this.http.post(`${environment.API_ENDPOINT}users/login`, postData).subscribe(
+    return this.http.post(`${this.url}signin`, postData).subscribe(
       (res: Response) => {
+        console.log(res)
         if (res.status == 1) {
           this.setSession(res);
           this.router.navigate(['/dashboard']);

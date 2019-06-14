@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
 import { ChildService } from '../../service/child.service';
 import { AuthService } from 'src/app/modules/auth/service/auth.service';
+import { Router, ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-child-form',
@@ -10,10 +11,24 @@ import { AuthService } from 'src/app/modules/auth/service/auth.service';
 })
 export class ChildFormComponent implements OnInit {
   childForm: FormGroup;
-  constructor(private childService: ChildService, private authService: AuthService) { }
+  editFlag: boolean = false;
+  singleRecord: any;
+
+  constructor(private childService: ChildService, private authService: AuthService, private router: Router, private activatedRoute: ActivatedRoute) {}
 
   ngOnInit() {
+    this.activatedRoute.params.subscribe(param => {
+      if (param && param.id) {
+        this.edit(param.id);
+        this.editFlag = true;
+      }
+    });
     this.initForm();
+  }
+
+  edit(id) {
+    this.singleRecord = this.childService.edit(id);
+    console.log(this.singleRecord);
   }
 
   initForm() {
